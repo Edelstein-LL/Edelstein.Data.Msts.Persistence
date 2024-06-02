@@ -6,6 +6,1102 @@ public class MstDbContext : DbContext
 {
     public MstDbContext(DbContextOptions<MstDbContext> options) : base(options) { }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<AchievementMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<AdjustTrackingListMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<AlbumCardMMst>(entity =>
+        {
+            entity.HasKey(e => e.CardId);
+        });
+
+        modelBuilder.Entity<AlbumMemberTagMMst>(entity =>
+        {
+            entity.HasKey(e => e.MemberTagId);
+        });
+
+        modelBuilder.Entity<AlbumMultiUnitMMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MultiUnitId,
+                e.UnitId
+            });
+        });
+
+        modelBuilder.Entity<AlbumSeriesMMst>(entity =>
+        {
+            entity.HasKey(e => e.AlbumSeriesId);
+        });
+
+        modelBuilder.Entity<AlbumSeriesThumbnailAssetMMst>(entity =>
+        {
+            entity.HasKey(e => e.AlbumSeriesId);
+        });
+
+        modelBuilder.Entity<AlbumUnitMMst>(entity =>
+        {
+            entity.HasKey(e => e.UnitId);
+        });
+
+        modelBuilder.Entity<AlbumUnitPairMMst>(entity =>
+        {
+            entity.HasKey(e => e.UnitPairId);
+        });
+
+        modelBuilder.Entity<AlbumUnitSeriesMMst>(entity =>
+        {
+            entity.HasKey(e => e.AlbumUnitSeriesId);
+        });
+
+        modelBuilder.Entity<AlbumUnitTypeMemberTagMMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.UnitTypeId,
+                e.MemberTagId
+            });
+        });
+
+        modelBuilder.Entity<AlbumUnitTypeMst>(entity =>
+        {
+            entity.HasKey(e => e.UnitTypeId);
+        });
+
+        modelBuilder.Entity<BeginnerMissionMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number,
+                e.Level
+            });
+        });
+
+        modelBuilder.Entity<BeginnerMissionRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<BeginnerMissionRewardSettingMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterBeginnerMissionId,
+                e.Level,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<BgmMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<BillingProductMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<BillingProductRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<BillingShopMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<BillingSubscriptionMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterBillingProductId);
+        });
+
+        modelBuilder.Entity<BillingSubscriptionRewardMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterBillingSubscriptionLabel,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<CardCollectionRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<CardEvolveConditionMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterCardId);
+        });
+
+        modelBuilder.Entity<CardEvolveMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Rarity,
+                e.EvolveCount
+            });
+        });
+
+        modelBuilder.Entity<CardGetMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterCardId);
+        });
+
+        modelBuilder.Entity<CardLevelMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Level
+            });
+        });
+
+        modelBuilder.Entity<CardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<CardRarityMst>(entity =>
+        {
+            entity.HasKey(e => e.Rarity);
+        });
+
+        modelBuilder.Entity<CardSkillLevelMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Level
+            });
+        });
+
+        modelBuilder.Entity<CardSysVoiceMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.MasterVoiceId
+            });
+        });
+
+        modelBuilder.Entity<CharacterGroupMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.CharacterId,
+                e.GroupId
+            });
+        });
+
+        modelBuilder.Entity<CharacterMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<CharacterSysVoiceMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.MasterCharacterId,
+                e.MasterVoiceId
+            });
+        });
+
+        modelBuilder.Entity<ChatAttachmentMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ChatChapterMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ChatCharacterMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ChatMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ChatRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ChatRoomMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ChatStampMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ChatVoiceKeyMst>(entity =>
+        {
+            entity.HasKey(e => e.Key);
+        });
+
+        modelBuilder.Entity<ChipsterResultCodeMst>(entity =>
+        {
+            entity.HasKey(e => e.ResultCode);
+        });
+
+        modelBuilder.Entity<ComicMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<CommonBgMovieMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ConstMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<DateConditionMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<DateConditionOthersMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Num
+            });
+        });
+
+        modelBuilder.Entity<DialogButtonMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<DialogMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<EventCardBonusMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.TargetId
+            });
+        });
+
+        modelBuilder.Entity<EventLiveMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.MasterLiveId
+            });
+        });
+
+        modelBuilder.Entity<EventMemberRankingMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.GroupId,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<EventMemberRankingRewardMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<EventMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<EventPointMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<EventPointRankingMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.GroupId,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<EventPointRankingRewardMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<EventPointRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<EventPointSettingsMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<EventScoreMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterEventId);
+        });
+
+        modelBuilder.Entity<EventScoreRankingMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<EventScoreRankingRewardMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<EventStoryMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.MasterStoryId
+            });
+        });
+
+        modelBuilder.Entity<EventTipsMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.RootPath
+            });
+        });
+
+        modelBuilder.Entity<EventTipsPageMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.SpriteName
+            });
+        });
+
+        modelBuilder.Entity<EventTopBannerMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.MasterGachaId
+            });
+        });
+
+        modelBuilder.Entity<EventTypeMst>(entity =>
+        {
+            entity.HasKey(e => e.EventLiveName);
+        });
+
+        modelBuilder.Entity<EvolveItemAmountMst>(entity =>
+        {
+            entity.HasKey(e => e.Rarity);
+        });
+
+        modelBuilder.Entity<EvolveItemConditionMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterItemId);
+        });
+
+        modelBuilder.Entity<ExchangeItemMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ExchangeItemRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ExchangeMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<FunctionLockMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<GamelibResultCodeMst>(entity =>
+        {
+            entity.HasKey(e => e.ResultCode);
+        });
+
+        modelBuilder.Entity<GroupMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<HomeBannerMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<HomeBgMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ItemMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LimitedLiveMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveBoostMst>(entity =>
+        {
+            entity.HasKey(e => e.Value);
+        });
+
+        modelBuilder.Entity<LiveClearRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveComboMst>(entity =>
+        {
+            entity.HasKey(e => e.ComboNum);
+        });
+
+        modelBuilder.Entity<LiveConditionMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterLiveId);
+        });
+
+        modelBuilder.Entity<LiveEffectValueMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveInputResultMst>(entity =>
+        {
+            entity.HasKey(e => e.Type);
+        });
+
+        modelBuilder.Entity<LiveLaneSkinMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveMissionComboMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterMusicId);
+        });
+
+        modelBuilder.Entity<LiveMissionMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveMissionRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveRankingRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveRecommendListMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterLiveRecommendId,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<LiveRecommendMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveRewardSettingMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.LiveMode,
+                e.ScoreRank
+            });
+        });
+
+        modelBuilder.Entity<LiveRuleMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterLiveId);
+        });
+
+        modelBuilder.Entity<LiveTapEffectMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LiveTapSeMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LocationMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LocationRewardMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<LoginBonusMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LoginBonusRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LoginBonusRewardSettingMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterLoginBonusId,
+                e.DayCount
+            });
+        });
+
+        modelBuilder.Entity<LotteryCautionMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LotteryEffMovieMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.BandCategory
+            });
+        });
+
+        modelBuilder.Entity<LotteryEffMovieRatioMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LotteryImageMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LotteryInfoMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LotteryItemMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+            entity.HasIndex(e => e.Id);
+        });
+
+        modelBuilder.Entity<LotteryMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LotteryPriceMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<LotteryRarityMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+            entity.HasIndex(e => e.Id);
+            entity.HasIndex(e => e.MasterLotteryItemId);
+        });
+
+        modelBuilder.Entity<LotteryRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<LotteryStepupMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterLotteryId);
+        });
+
+        modelBuilder.Entity<MembershipWallpaperMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<MissionBannerMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<MissionMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<MissionRewardMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<MovieKeyMst>(entity =>
+        {
+            entity.HasKey(e => e.Key);
+        });
+
+        modelBuilder.Entity<MovieMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<MultiDailyDropEffectMst>(entity =>
+        {
+            entity.HasKey(e => e.Name);
+        });
+
+        modelBuilder.Entity<MultieventCardBonusMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.TargetId
+            });
+        });
+
+        modelBuilder.Entity<MultieventMatchingrangeMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<MultieventPenaltyMst>(entity =>
+        {
+            entity.HasKey(e => e.PenaltyCount);
+        });
+
+        modelBuilder.Entity<MultieventRankbonusMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.PlayerCount,
+                e.LiveRank,
+                e.EventPtBonus
+            });
+        });
+
+        modelBuilder.Entity<MultieventSettingMst>(entity =>
+        {
+            entity.HasKey(e => e.EventId);
+        });
+
+        modelBuilder.Entity<MultiPenaltyMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<MultiRoomConditionMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<MultiRoomSelectMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<MusicLevelMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterMusicId,
+                e.Level
+            });
+            entity.HasIndex(e => e.MasterMusicId);
+        });
+
+        modelBuilder.Entity<MusicMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<MusicShopPriceMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterMusicId);
+        });
+
+        modelBuilder.Entity<NavigationConditionMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterNavigationId);
+        });
+
+        modelBuilder.Entity<NavigationDialogPageMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterNavigationId,
+                e.SpriteName
+            });
+        });
+
+        modelBuilder.Entity<NavigationMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<NewSkillMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<NoticeBirthdayMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterNoticeGeneralId);
+        });
+
+        modelBuilder.Entity<NoticeCardImageMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<NoticeCardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<NoticeGachaMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<NoticeGeneralMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<NoticeGeneralNavigationMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterNoticeGeneralId);
+        });
+
+        modelBuilder.Entity<NoticeGeneralSequenceMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterNoticeGeneralId);
+        });
+
+        modelBuilder.Entity<NoticeMusicImageMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<NoticeMusicMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<PartVoiceKeyMst>(entity =>
+        {
+            entity.HasKey(e => e.Key);
+        });
+
+        modelBuilder.Entity<PresetBackgroundMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<PresetForegroundMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ReleaseLabelMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ResourceDownloadMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ResultCodeMst>(entity =>
+        {
+            entity.HasKey(e => e.ResultCode);
+        });
+
+        modelBuilder.Entity<RhythmIconMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<SceneTitleMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<SeMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ShopItemMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<ShopRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<SkillCenterEffectMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<SkillCenterMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<SoundKeyMst>(entity =>
+        {
+            entity.HasKey(e => e.Key);
+        });
+
+        modelBuilder.Entity<StampMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<StarEventCardBonusMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.MasterEventId,
+                e.TargetId
+            });
+        });
+
+        modelBuilder.Entity<StarEventLevelMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Level
+            });
+        });
+
+        modelBuilder.Entity<StarEventLevelRewardMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<StarEventLevelRewardSettingMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Level
+            });
+        });
+
+        modelBuilder.Entity<StarEventSettingMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.StarId
+            });
+        });
+
+        modelBuilder.Entity<StoryMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<StoryPartMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<StoryReleaseMst>(entity =>
+        {
+            entity.HasKey(e => e.MasterStoryPartId);
+        });
+
+        modelBuilder.Entity<StoryRewardMst>(entity =>
+        {
+            entity.HasKey(e => new
+            {
+                e.Id,
+                e.Number
+            });
+        });
+
+        modelBuilder.Entity<SubscriptionImageMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<SysVoiceKeyMst>(entity =>
+        {
+            entity.HasKey(e => e.Key);
+        });
+
+        modelBuilder.Entity<TextMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<TitleMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<TitleScreenMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<UrlMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<UserRankMst>(entity =>
+        {
+            entity.HasKey(e => e.Rank);
+            entity.HasIndex(e => e.Exp);
+        });
+
+        modelBuilder.Entity<UserRankRewardMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<VoiceKeyMst>(entity =>
+        {
+            entity.HasKey(e => e.Key);
+        });
+
+        modelBuilder.Entity<VoiceMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<WipeMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+
+        modelBuilder.Entity<WipePlayListMst>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+        });
+    }
+
     public DbSet<AchievementMst> AchievementMsts { get; set; }
     public DbSet<AdjustTrackingListMst> AdjustTrackingListMsts { get; set; }
     public DbSet<AlbumCardMMst> AlbumCardMMsts { get; set; }

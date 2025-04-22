@@ -501,6 +501,7 @@ public class MstDbContext : DbContext
         modelBuilder.Entity<ItemMst>(entity =>
         {
             entity.HasKey(e => e.Id);
+            entity.HasIndex(e => e.ExpiryDate);
         });
 
         modelBuilder.Entity<LimitedLiveMst>(entity =>
